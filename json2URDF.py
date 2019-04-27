@@ -132,17 +132,17 @@ if __name__ == '__main__':
             if joint_type[i, j] == -1:
                 continue
             elif joint_type[i, j] == 0:
-                temp_URDF = add_joint(0, get_label[j]+str(get_mesh[j]), get_label[i]+str(get_mesh[i]), origin[i])
+                temp_URDF = add_joint(0, get_label[j]+str(get_mesh[j]), get_label[i]+str(get_mesh[i]), origin[i]-origin[j])
                 URDF.extend(temp_URDF)
                 joint_type[i, j] = -1
                 joint_type[j, i] = -1
             elif joint_type[i, j] == 1:
-                temp_URDF = add_joint(1, get_label[j]+str(get_mesh[j]), get_label[i]+str(get_mesh[i]), origin[i], axis[i], rangeMin[i], rangeMax[i])
+                temp_URDF = add_joint(1, get_label[j]+str(get_mesh[j]), get_label[i]+str(get_mesh[i]), origin[i]-origin[j], axis[i], rangeMin[i], rangeMax[i])
                 URDF.extend(temp_URDF)
                 joint_type[i, j] = -1
                 joint_type[j, i] = -1
             elif joint_type[i, j] == 2:
-                temp_URDF = add_joint(2, get_label[j]+str(get_mesh[j]), get_label[i]+str(get_mesh[i]), origin[i], axis[i], rangeMin[i], rangeMax[i])
+                temp_URDF = add_joint(2, get_label[j]+str(get_mesh[j]), get_label[i]+str(get_mesh[i]), origin[i]-origin[j], axis[i], rangeMin[i], rangeMax[i])
                 URDF.extend(temp_URDF)
                 joint_type[i, j] = -1
                 joint_type[j, i] = -1

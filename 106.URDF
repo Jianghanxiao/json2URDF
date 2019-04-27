@@ -188,28 +188,28 @@
 	<joint name="seat17_back16" type="fixed">
 		<parent link="seat17"/>
 		<child link="back16"/>
-		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+		<origin xyz="0.0 -0.4177574962377548 0.002097010612487793" rpy="0 0 0"/>
 	</joint>
 
 
 	<joint name="seat17_arm15" type="fixed">
 		<parent link="seat17"/>
 		<child link="arm15"/>
-		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+		<origin xyz="0.0 -0.4177574962377548 0.002097010612487793" rpy="0 0 0"/>
 	</joint>
 
 
 	<joint name="seat17_arm14" type="fixed">
 		<parent link="seat17"/>
 		<child link="arm14"/>
-		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+		<origin xyz="0.0 -0.4177574962377548 0.002097010612487793" rpy="0 0 0"/>
 	</joint>
 
 
 	<joint name="gas lift piece13_seat17_rotation" type="revolute">
 		<parent link="gas lift piece13"/>
 		<child link="seat17"/>
-		<origin xyz="0.0 0.4177574962377548 -0.002097010612487793" rpy="0 0 0"/>
+		<origin xyz="0.06868569145071565 0.15000275606749947 0.22220634907783016" rpy="0 0 0"/>
 		<limit lower="-3.141592653589793" upper="3.141592653589793" effort="10" velocity="3"/>
 		<axis xyz="0.0 1.0 0.0"/>
 	</joint>
