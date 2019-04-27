@@ -1,0 +1,157 @@
+<robot name="106">
+
+
+    <link name="1">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/1.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="2">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/2.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="3">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/3.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="4">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/4.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="5">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/5.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="6">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/6.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="7">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/7.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="8">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/8.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="9">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/9.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="10">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/10.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="11">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/11.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="12">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/12.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="13">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/13.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="14">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/14.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="15">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/15.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="16">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/16.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+    <link name="17">
+		<visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="./106/part_dae/17.dae" />
+            </geometry>
+		</visual>	
+	</link>
+
+</robot>
