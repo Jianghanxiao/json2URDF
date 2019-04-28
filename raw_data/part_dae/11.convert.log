@@ -1,0 +1,12 @@
+param = 11.dae
+assimp export: select file format: 'collada' (COLLADA - Digital Asset Exchange Schema)
+Launching asset import ...           OK
+Validating postprocessing flags ...  OK
+Importing file ...                   OK 
+   import took approx. 0.02212 seconds
+
+Launching asset export ...           OK
+Exporting file ...                   OK 
+   export took approx. 0.01836 seconds
+
+assimp export: wrote output file: 11.dae
