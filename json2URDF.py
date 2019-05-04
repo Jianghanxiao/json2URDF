@@ -4,7 +4,7 @@ import numpy as np
 #this funciton is used to obtain the link part URDF code
 def add_link(label, mesh, origin):
     temp_URDF = []
-    temp_URDF.append(f'\t<link name="{label}{mesh}">')
+    temp_URDF.append(f'\t<link name="{mesh}:{label}">')
     temp_URDF.append('\t\t<visual>')
     temp_URDF.append(f'\t\t\t<origin xyz="{-origin[0]} {-origin[1]} {-origin[2]}" rpy="0 0 0"/>')
     #temp_URDF.append(f'\t\t\t<origin xyz="0 0 0" rpy="0 0 0"/>')
@@ -20,16 +20,16 @@ def add_joint(joint_type, parent_link, children_link, origin, axis=[], rangeMin=
     temp_URDF = []
     #fixed joint
     if joint_type == 0:
-        temp_URDF.append(f'\t<joint name="{parent_link}_{children_link}" type="fixed">')
+        temp_URDF.append(f'\t<joint name="{parent_link}::{children_link}" type="fixed">')
         temp_URDF.append(f'\t\t<parent link="{parent_link}"/>')
         temp_URDF.append(f'\t\t<child link="{children_link}"/>')
         temp_URDF.append(f'\t\t<origin xyz="{origin[0]} {origin[1]} {origin[2]}" rpy="0 0 0"/>')
         temp_URDF.append('\t</joint>')
         temp_URDF.append('\n')  
         return temp_URDF
-    #Central Rotation
+    #Central Rotation and Hinged Rotation
     elif joint_type == 1:
-        temp_URDF.append(f'\t<joint name="{parent_link}_{children_link}_rotation" type="revolute">')  
+        temp_URDF.append(f'\t<joint name="{parent_link}::{children_link}_rotation" type="revolute">')  
         temp_URDF.append(f'\t\t<parent link="{parent_link}"/>')  
         temp_URDF.append(f'\t\t<child link="{children_link}"/>')  
         temp_URDF.append(f'\t\t<origin xyz="{origin[0]} {origin[1]} {origin[2]}" rpy="0 0 0"/>')  
@@ -40,7 +40,7 @@ def add_joint(joint_type, parent_link, children_link, origin, axis=[], rangeMin=
         return temp_URDF
     #Translation
     elif joint_type == 2:
-        temp_URDF.append(f'\t<joint name="{parent_link}_{children_link}_prismatic" type="prismatic">')  
+        temp_URDF.append(f'\t<joint name="{parent_link}::{children_link}_translation" type="prismatic">')  
         temp_URDF.append(f'\t\t<parent link="{parent_link}"/>')  
         temp_URDF.append(f'\t\t<child link="{children_link}"/>')  
         temp_URDF.append(f'\t\t<origin xyz="{origin[0]} {origin[1]} {origin[2]}" rpy="0 0 0"/>')  
@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
     #get the information of some parts which should be the children link,0:x, 1:y, 2:z
     part_num = len(connectivity_graph)
-    joint_type = np.zeros((part_num, part_num), dtype=int) #0:fixed, 1:"Central Rotation", 2:"Translation"
+    joint_type = np.zeros((part_num, part_num), dtype=int) #0:fixed, 1:"Central Rotation and Hinge Rotation", 2:"Translation"
     origin = np.zeros((part_num, 3))
     axis = np.zeros((part_num, 3))
     rangeMin = np.zeros(part_num)
@@ -107,11 +107,11 @@ if __name__ == '__main__':
         parent = int(i['base'][0])
 
         #joint_type[i, j]: i is children link, j is parent link; 0:fixed, 1:rotation, 2:translation, -1: no joint
-        if i['type'] == 'Central Rotation':
-            joint_type[int(i['pid']), parent] = 1
-            joint_type[parent, int(i['pid'])] = -1
-        elif i['type'] == 'Translation':
+        if i['type'] == 'Translation':
             joint_type[int(i['pid']), parent] = 2
+            joint_type[parent, int(i['pid'])] = -1
+        else:
+            joint_type[int(i['pid']), parent] = 1
             joint_type[parent, int(i['pid'])] = -1
 
 
@@ -132,17 +132,17 @@ if __name__ == '__main__':
             if joint_type[i, j] == -1:
                 continue
             elif joint_type[i, j] == 0:
-                temp_URDF = add_joint(0, get_label[j]+str(get_mesh[j]), get_label[i]+str(get_mesh[i]), origin[i]-origin[j])
+                temp_URDF = add_joint(0, str(get_mesh[j])+':'+get_label[j], str(get_mesh[i])+':'+get_label[i], origin[i]-origin[j])
                 URDF.extend(temp_URDF)
                 joint_type[i, j] = -1
                 joint_type[j, i] = -1
             elif joint_type[i, j] == 1:
-                temp_URDF = add_joint(1, get_label[j]+str(get_mesh[j]), get_label[i]+str(get_mesh[i]), origin[i]-origin[j], axis[i], rangeMin[i], rangeMax[i])
+                temp_URDF = add_joint(1, str(get_mesh[j])+':'+get_label[j], str(get_mesh[i])+':'+get_label[i], origin[i]-origin[j], axis[i], rangeMin[i], rangeMax[i])
                 URDF.extend(temp_URDF)
                 joint_type[i, j] = -1
                 joint_type[j, i] = -1
             elif joint_type[i, j] == 2:
-                temp_URDF = add_joint(2, get_label[j]+str(get_mesh[j]), get_label[i]+str(get_mesh[i]), origin[i]-origin[j], axis[i], rangeMin[i], rangeMax[i])
+                temp_URDF = add_joint(2, str(get_mesh[j])+':'+get_label[j], str(get_mesh[i])+':'+get_label[i], origin[i]-origin[j], axis[i], rangeMin[i], rangeMax[i])
                 URDF.extend(temp_URDF)
                 joint_type[i, j] = -1
                 joint_type[j, i] = -1
