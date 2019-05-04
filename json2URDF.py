@@ -1,15 +1,16 @@
 import json
 import numpy as np
+import argparse
 
 #this funciton is used to obtain the link part URDF code
-def add_link(label, mesh, origin):
+def add_link(label, mesh, origin, dir):
     temp_URDF = []
     temp_URDF.append(f'\t<link name="{mesh}:{label}">')
     temp_URDF.append('\t\t<visual>')
     temp_URDF.append(f'\t\t\t<origin xyz="{-origin[0]} {-origin[1]} {-origin[2]}" rpy="0 0 0"/>')
     #temp_URDF.append(f'\t\t\t<origin xyz="0 0 0" rpy="0 0 0"/>')
     temp_URDF.append('\t\t\t<geometry>')
-    temp_URDF.append(f'\t\t\t\t<mesh filename="./raw_data/part_dae/{mesh}.dae" />')
+    temp_URDF.append(f'\t\t\t\t<mesh filename="{dir}/part_dae/{mesh}.dae" />')
     temp_URDF.append('\t\t\t</geometry>')
     temp_URDF.append('\t\t</visual>')  
     temp_URDF.append('\t</link>')    
@@ -53,20 +54,26 @@ def add_joint(joint_type, parent_link, children_link, origin, axis=[], rangeMin=
 
 
 if __name__ == '__main__':
-    object_id = 106
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i','--id', type=str, help='the object which is used to trandform into URDF, such as 106', required=True)
+    parser.add_argument('-d','--data_dir', type=str, help='the dir which contains all the data, suach as ./raw_data', required=True)
+    args = parser.parse_args()
+
+    object_id = args.id
+    dir = args.data_dir
 
     #ajson file is used to get the relationship between the link and the meshes
-    file = open(f'./raw_data/{object_id}.ajson')
+    file = open(f'{dir}/{object_id}.ajson')
     ajson_data = json.load(file)
     file.close()
 
     #json file is used to get the articulations relationship
-    file = open(f'./raw_data/p5d.{object_id}.articulations.json')
+    file = open(f'{dir}/p5d.{object_id}.articulations.json')
     json_data = json.load(file)
     file.close()
 
     #artpre.json file is used to get the connectivity graph
-    file = open(f'./raw_data/{object_id}.artpre.json')
+    file = open(f'{dir}/{object_id}.artpre.json')
     artpre_data = json.load(file)
     file.close()
 
@@ -123,7 +130,7 @@ if __name__ == '__main__':
     #used to add all the links
     for i in nodes:
         if i['name'].isdigit():
-            temp_URDF = add_link(i['label'], int(i['id']), origin[int(i['name'])])
+            temp_URDF = add_link(i['label'], int(i['id']), origin[int(i['name'])], dir)
             URDF.extend(temp_URDF)
 
     #used to add all joints(traverse the connectivity graph)
