@@ -2,7 +2,7 @@
 ## File Description
 ### json2URDF.py
 Command: 
-`python3.7 json2URDF -i 106 -d './raw_data'`
+`python3.7 json2URDF.py -i 106 -d './raw_data'`
 
 -i: the model id
 
