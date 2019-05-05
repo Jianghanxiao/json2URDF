@@ -5,11 +5,19 @@
       <author>Assimp</author>
       <authoring_tool>Assimp Exporter</authoring_tool>
     </contributor>
-    <created>2019-04-26T07:52:14</created>
-    <modified>2019-04-26T07:52:14</modified>
+    <created>2019-05-04T20:50:49</created>
+    <modified>2019-05-04T20:50:49</modified>
     <unit name="meter" meter="1" />
     <up_axis>Y_UP</up_axis>
   </asset>
+  <library_images>
+    <image id="material_2_2-diffuse-image">
+      <init_from>../images/texture_0.jpg</init_from>
+    </image>
+    <image id="material_3_2-diffuse-image">
+      <init_from>../images/texture_1.jpg</init_from>
+    </image>
+  </library_images>
   <library_effects>
     <effect id="DefaultMaterial-fx" name="DefaultMaterial">
       <profile_COMMON>
@@ -54,19 +62,135 @@
               <color sid="ambient">0   0   0   1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0   0   0   1</color>
+              <color sid="diffuse">0.0470588244497776   0.0470588244497776   0.0470588244497776   1</color>
             </diffuse>
             <specular>
-              <color sid="specular">0   0   0   1</color>
+              <color sid="specular">0.2980392277240753   0.2980392277240753   0.2980392277240753   1</color>
             </specular>
             <shininess>
-              <float sid="shininess">0</float>
+              <float sid="shininess">20</float>
             </shininess>
             <transparent>
               <color sid="transparent">1   1   1   1</color>
             </transparent>
             <transparency>
-              <float sid="transparency">0.1000000014901161</float>
+              <float sid="transparency">1</float>
+            </transparency>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="material_1_2-fx" name="material_1_2">
+      <profile_COMMON>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0   0   0   1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0   0   0   1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.4470588266849518   0.4470588266849518   0.4470588266849518   1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">1   1   1   1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">100</float>
+            </shininess>
+            <transparent>
+              <color sid="transparent">1   1   1   1</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1</float>
+            </transparency>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="material_2_2-fx" name="material_2_2">
+      <profile_COMMON>
+        <newparam sid="material_2_2-diffuse-surface">
+          <surface type="2D">
+            <init_from>material_2_2-diffuse-image</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="material_2_2-diffuse-sampler">
+          <sampler2D>
+            <source>material_2_2-diffuse-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0   0   0   1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0   0   0   1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="material_2_2-diffuse-sampler" texcoord="CHANNEL0" />
+            </diffuse>
+            <specular>
+              <color sid="specular">0.3568627536296844   0.3568627536296844   0.3568627536296844   1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">40</float>
+            </shininess>
+            <transparent>
+              <color sid="transparent">1   1   1   1</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1</float>
+            </transparency>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="material_3_2-fx" name="material_3_2">
+      <profile_COMMON>
+        <newparam sid="material_3_2-diffuse-surface">
+          <surface type="2D">
+            <init_from>material_3_2-diffuse-image</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="material_3_2-diffuse-sampler">
+          <sampler2D>
+            <source>material_3_2-diffuse-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0   0   0   1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0   0   0   1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="material_3_2-diffuse-sampler" texcoord="CHANNEL0" />
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1490196138620377   0.1490196138620377   0.1490196138620377   1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">10</float>
+            </shininess>
+            <transparent>
+              <color sid="transparent">1   1   1   1</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1</float>
             </transparency>
             <index_of_refraction>
               <float sid="index_of_refraction">1</float>
@@ -82,6 +206,15 @@
     </material>
     <material id="material_0_2" name="material_0_2">
       <instance_effect url="#material_0_2-fx"/>
+    </material>
+    <material id="material_1_2" name="material_1_2">
+      <instance_effect url="#material_1_2-fx"/>
+    </material>
+    <material id="material_2_2" name="material_2_2">
+      <instance_effect url="#material_2_2-fx"/>
+    </material>
+    <material id="material_3_2" name="material_3_2">
+      <instance_effect url="#material_3_2-fx"/>
     </material>
   </library_materials>
   <library_geometries>
@@ -138,7 +271,7 @@
         <instance_geometry url="#meshId0">
           <bind_material>
             <technique_common>
-              <instance_material symbol="defaultMaterial" target="#material_0_2">
+              <instance_material symbol="defaultMaterial" target="#material_2_2">
                 <bind_vertex_input semantic="CHANNEL0" input_semantic="TEXCOORD" input_set="0"/>
               </instance_material>
             </technique_common>
