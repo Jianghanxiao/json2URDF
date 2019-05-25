@@ -111,15 +111,15 @@ if __name__ == '__main__':
         rangeMin[int(i['pid'])] = float(i['rangeMin'])
         rangeMax[int(i['pid'])] = float(i['rangeMax'])
 
-        parent = int(i['base'][0])
+        parent[int(i['pid'])] = int(i['base'][0])
 
         #joint_type[i, j]: i is children link, j is parent link; 0:fixed, 1:rotation, 2:translation, -1: no joint
         if i['type'] == 'Translation':
-            joint_type[int(i['pid']), parent] = 2
-            joint_type[parent, int(i['pid'])] = -1
+            joint_type[int(i['pid']), parent[int(i['pid'])]] = 2
+            joint_type[parent[int(i['pid'])], int(i['pid'])] = -1
         else:
-            joint_type[int(i['pid']), parent] = 1
-            joint_type[parent, int(i['pid'])] = -1
+            joint_type[int(i['pid']), parent[int(i['pid'])]] = 1
+            joint_type[parent[int(i['pid'])], int(i['pid'])] = -1
 
 
     #used to write the URDF
