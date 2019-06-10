@@ -3,7 +3,7 @@
 
 	<link name="1:wheel">
 		<visual>
-			<origin xyz="-0.16592684388160706 4.846891027421307e-09 0.22176782367751002" rpy="0 0 0"/>
+			<origin xyz="-0.23461249470710754 -0.024287748803044046 -0.02985568018630147" rpy="0 0 0"/>
 			<geometry>
 				<mesh filename="raw_data/part_dae/1.dae" />
 			</geometry>
@@ -23,7 +23,7 @@
 
 	<link name="3:wheel">
 		<visual>
-			<origin xyz="-0.06868565082550049 0.39346974258781975 -0.2537205144762993" rpy="0 0 0"/>
+			<origin xyz="-0.06868565082550049 -0.024287753649935073 -0.2516235038638115" rpy="0 0 0"/>
 			<geometry>
 				<mesh filename="raw_data/part_dae/3.dae" />
 			</geometry>
@@ -43,7 +43,7 @@
 
 	<link name="5:wheel">
 		<visual>
-			<origin xyz="0.26165415346622467 1.8829651171614614e-09 0.086154505610466" rpy="0 0 0"/>
+			<origin xyz="0.19296850264072418 -0.024287751766969956 -0.1654689982533455" rpy="0 0 0"/>
 			<geometry>
 				<mesh filename="raw_data/part_dae/5.dae" />
 			</geometry>
@@ -63,7 +63,7 @@
 
 	<link name="7:wheel">
 		<visual>
-			<origin xyz="0.26165415346622467 7.880555097372621e-09 0.3605721518397331" rpy="0 0 0"/>
+			<origin xyz="0.19296850264072418 -0.024287745769379976 0.10894864797592163" rpy="0 0 0"/>
 			<geometry>
 				<mesh filename="raw_data/part_dae/7.dae" />
 			</geometry>
@@ -83,7 +83,7 @@
 
 	<link name="9:wheel">
 		<visual>
-			<origin xyz="-0.00319099985063076 9.658934985168344e-09 0.441940002143383" rpy="0 0 0"/>
+			<origin xyz="-0.07187665067613125 -0.024287743991000088 0.19031649827957153" rpy="0 0 0"/>
 			<geometry>
 				<mesh filename="raw_data/part_dae/9.dae" />
 			</geometry>
@@ -113,7 +113,7 @@
 
 	<link name="12:gas lift piece">
 		<visual>
-			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+			<origin xyz="-2.5680730458832457e-09 -0.11304300278425217 -0.028758065351089032" rpy="0 0 0"/>
 			<geometry>
 				<mesh filename="raw_data/part_dae/12.dae" />
 			</geometry>
@@ -123,7 +123,7 @@
 
 	<link name="13:gas lift piece">
 		<visual>
-			<origin xyz="0.06868569145071565 -0.26775474017025536 0.22430335969031795" rpy="0 0 0"/>
+			<origin xyz="0.019719761365080152 -0.1806190013885498 -0.024017783463802116" rpy="0 0 0"/>
 			<geometry>
 				<mesh filename="raw_data/part_dae/13.dae" />
 			</geometry>
@@ -163,7 +163,7 @@
 
 	<link name="17:seat">
 		<visual>
-			<origin xyz="-0.0 -0.4177574962377548 0.002097010612487793" rpy="0 0 0"/>
+			<origin xyz="0.01249459573411859 -0.40261900138854984 -0.023186566122892122" rpy="0 0 0"/>
 			<geometry>
 				<mesh filename="raw_data/part_dae/17.dae" />
 			</geometry>
@@ -188,28 +188,28 @@
 	<joint name="17:seat::16:back" type="fixed">
 		<parent link="17:seat"/>
 		<child link="16:back"/>
-		<origin xyz="0.0 -0.4177574962377548 0.002097010612487793" rpy="0 0 0"/>
+		<origin xyz="0.01249459573411859 -0.40261900138854984 -0.023186566122892122" rpy="0 0 0"/>
 	</joint>
 
 
 	<joint name="17:seat::15:arm" type="fixed">
 		<parent link="17:seat"/>
 		<child link="15:arm"/>
-		<origin xyz="0.0 -0.4177574962377548 0.002097010612487793" rpy="0 0 0"/>
+		<origin xyz="0.01249459573411859 -0.40261900138854984 -0.023186566122892122" rpy="0 0 0"/>
 	</joint>
 
 
 	<joint name="17:seat::14:arm" type="fixed">
 		<parent link="17:seat"/>
 		<child link="14:arm"/>
-		<origin xyz="0.0 -0.4177574962377548 0.002097010612487793" rpy="0 0 0"/>
+		<origin xyz="0.01249459573411859 -0.40261900138854984 -0.023186566122892122" rpy="0 0 0"/>
 	</joint>
 
 
 	<joint name="13:gas lift piece::17:seat_rotation" type="revolute">
 		<parent link="13:gas lift piece"/>
 		<child link="17:seat"/>
-		<origin xyz="0.06868569145071565 0.15000275606749947 0.22220634907783016" rpy="0 0 0"/>
+		<origin xyz="0.007225165630961563 0.22200000000000003 -0.0008312173409099934" rpy="0 0 0"/>
 		<limit lower="-3.141592653589793" upper="3.141592653589793" effort="10" velocity="3"/>
 		<axis xyz="0.0 1.0 0.0"/>
 	</joint>
@@ -218,52 +218,52 @@
 	<joint name="4:caster::3:wheel_rotation" type="revolute">
 		<parent link="4:caster"/>
 		<child link="3:wheel"/>
-		<origin xyz="0.06868565082550049 -0.39346974258781975 0.2537205144762993" rpy="0 0 0"/>
+		<origin xyz="0.06868565082550049 0.024287753649935073 0.2516235038638115" rpy="0 0 0"/>
 		<limit lower="-3.141592653589793" upper="3.141592653589793" effort="10" velocity="3"/>
-		<axis xyz="1.0 0.0 0.0"/>
+		<axis xyz="-1.0 0.0 0.0"/>
 	</joint>
 
 
 	<joint name="2:caster::1:wheel_rotation" type="revolute">
 		<parent link="2:caster"/>
 		<child link="1:wheel"/>
-		<origin xyz="0.16592684388160706 -4.846891027421307e-09 -0.22176782367751002" rpy="0 0 0"/>
+		<origin xyz="0.23461249470710754 0.024287748803044046 0.02985568018630147" rpy="0 0 0"/>
 		<limit lower="-3.141592653589793" upper="3.141592653589793" effort="10" velocity="3"/>
-		<axis xyz="1.0 0.0 0.0"/>
+		<axis xyz="0.0 0.0 1.0"/>
 	</joint>
 
 
 	<joint name="10:caster::9:wheel_rotation" type="revolute">
 		<parent link="10:caster"/>
 		<child link="9:wheel"/>
-		<origin xyz="0.00319099985063076 -9.658934985168344e-09 -0.441940002143383" rpy="0 0 0"/>
+		<origin xyz="0.07187665067613125 0.024287743991000088 -0.19031649827957153" rpy="0 0 0"/>
 		<limit lower="-3.141592653589793" upper="3.141592653589793" effort="10" velocity="3"/>
-		<axis xyz="1.0 0.0 0.0"/>
+		<axis xyz="-1.0 0.0 0.0"/>
 	</joint>
 
 
 	<joint name="6:caster::5:wheel_rotation" type="revolute">
 		<parent link="6:caster"/>
 		<child link="5:wheel"/>
-		<origin xyz="-0.26165415346622467 -1.8829651171614614e-09 -0.086154505610466" rpy="0 0 0"/>
+		<origin xyz="-0.19296850264072418 0.024287751766969956 0.1654689982533455" rpy="0 0 0"/>
 		<limit lower="-3.141592653589793" upper="3.141592653589793" effort="10" velocity="3"/>
-		<axis xyz="1.0 0.0 0.0"/>
+		<axis xyz="0.0 0.0 1.0"/>
 	</joint>
 
 
 	<joint name="11:base::5:wheel" type="fixed">
 		<parent link="11:base"/>
 		<child link="5:wheel"/>
-		<origin xyz="-0.26165415346622467 -1.8829651171614614e-09 -0.086154505610466" rpy="0 0 0"/>
+		<origin xyz="-0.19296850264072418 0.024287751766969956 0.1654689982533455" rpy="0 0 0"/>
 	</joint>
 
 
 	<joint name="8:caster::7:wheel_rotation" type="revolute">
 		<parent link="8:caster"/>
 		<child link="7:wheel"/>
-		<origin xyz="-0.26165415346622467 -7.880555097372621e-09 -0.3605721518397331" rpy="0 0 0"/>
+		<origin xyz="-0.19296850264072418 0.024287745769379976 -0.10894864797592163" rpy="0 0 0"/>
 		<limit lower="-3.141592653589793" upper="3.141592653589793" effort="10" velocity="3"/>
-		<axis xyz="1.0 0.0 0.0"/>
+		<axis xyz="0.0 0.0 1.0"/>
 	</joint>
 
 
@@ -298,7 +298,7 @@
 	<joint name="12:gas lift piece::11:base" type="fixed">
 		<parent link="12:gas lift piece"/>
 		<child link="11:base"/>
-		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+		<origin xyz="-2.5680730458832457e-09 -0.11304300278425217 -0.028758065351089032" rpy="0 0 0"/>
 	</joint>
 
 
@@ -309,11 +309,11 @@
 	</joint>
 
 
-	<joint name="12:gas lift piece::13:gas lift piece_translation" type="prismatic">
-		<parent link="12:gas lift piece"/>
-		<child link="13:gas lift piece"/>
-		<origin xyz="-0.06868569145071565 0.26775474017025536 -0.22430335969031795" rpy="0 0 0"/>
-		<limit lower="-0.0365284856855869" upper="0.00347151431441307" effort="10" velocity="3"/>
+	<joint name="13:gas lift piece::12:gas lift piece_rotation" type="revolute">
+		<parent link="13:gas lift piece"/>
+		<child link="12:gas lift piece"/>
+		<origin xyz="0.0197197639331532 -0.06757599860429764 0.0047402818872869165" rpy="0 0 0"/>
+		<limit lower="-3.141592653589793" upper="3.141592653589793" effort="10" velocity="3"/>
 		<axis xyz="0.0 1.0 0.0"/>
 	</joint>
 
