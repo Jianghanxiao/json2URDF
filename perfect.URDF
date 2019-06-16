@@ -225,7 +225,6 @@
 	</joint>
 
 
-
 	<joint name="13:drawer::2:handle" type="fixed">
 		<parent link="13:drawer"/>
 		<child link="2:handle"/>
