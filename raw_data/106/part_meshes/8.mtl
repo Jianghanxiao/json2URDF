@@ -1,0 +1,14 @@
+newmtl material_0_2
+illum 3
+d 1
+Ns 100
+Kd 0.45 0.45 0.45 
+Ks 1 1 1 
+
+newmtl material_1_2
+illum 3
+d 1
+Ns 20
+Kd 0.05 0.05 0.05 
+Ks 0.3 0.3 0.3 
+

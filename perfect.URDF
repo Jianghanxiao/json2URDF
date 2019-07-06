@@ -2,12 +2,12 @@
 
 
 	<link name="1:handle">
-		<visual>
-			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
-			<geometry>
-				<mesh filename="raw_data/397/part_dae/1.dae" />
-			</geometry>
-		</visual>
+		 <visual>
+      <geometry>
+        <cylinder length="0" radius="0.03"/>
+      </geometry>
+    </visual>
+
 	</link>
 
 
