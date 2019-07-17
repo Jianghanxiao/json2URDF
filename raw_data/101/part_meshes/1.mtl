@@ -1,0 +1,58 @@
+newmtl material_0_2
+illum 3
+d 1
+Ns 200
+Kd 0.56 0.56 0.56 
+Ks 1 1 1 
+
+newmtl material_1_2
+illum 3
+d 1
+Ns 300
+Kd 0.171223 0 0 
+Ks 0 0 0 
+
+newmtl material_2_2
+illum 3
+d 1
+Ns 200
+Kd 0.56 0.56 0.56 
+Ks 1 1 1 
+
+newmtl material_3_2
+illum 3
+d 1
+Ns 200
+Kd 0.56 0.56 0.56 
+Ks 1 1 1 
+
+newmtl material_4_2
+illum 3
+d 1
+Ns 40
+Kd 0.64 0.64 0.64 
+Ks 0.369 0.369 0.369 
+map_Kd ../images/texture_0.jpg
+
+newmtl material_5_2
+illum 3
+d 1
+Ns 50
+Kd 0.04 0.04 0.04 
+Ks 0.5 0.5 0.5 
+
+newmtl material_6_2
+illum 4
+d 0.950000
+Ns 100
+Kd 0 0 0 
+Ks 0.844452 0.844452 0.844452 
+
+newmtl material_7_2
+illum 3
+d 1
+Ns 100
+Kd 0.64 0.64 0.64 
+Ks 1 1 1 
+map_Kd ../images/texture_1.jpg
+

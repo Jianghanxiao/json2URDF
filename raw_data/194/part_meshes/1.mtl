@@ -1,0 +1,15 @@
+newmtl material_0_2
+illum 3
+d 1
+Ns 50
+Kd 0.8 0.557986 0.267414 
+Ks 0.725806 0.725806 0.725806 
+
+newmtl material_1_2
+illum 3
+d 1
+Ns 78
+Kd 0.8 0.8 0.8 
+Ks 0.14 0.14 0.14 
+map_Kd ../images/texture_0.jpg
+

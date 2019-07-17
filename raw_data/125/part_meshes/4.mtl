@@ -1,0 +1,7 @@
+newmtl material_0_2
+illum 3
+d 1
+Ns 200
+Kd 0.6 0.6 0.6 
+Ks 1 1 1 
+

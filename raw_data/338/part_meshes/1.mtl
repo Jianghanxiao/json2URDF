@@ -1,0 +1,56 @@
+newmtl material_0_2
+illum 4
+d 0.300000
+Ns 50
+Kd 1 1 1 
+Ks 0.5 0.5 0.5 
+
+newmtl material_1_2
+illum 3
+d 1
+Ns 50
+Kd 0.239552 0.229029 0.223019 
+Ks 0.01 0.01 0.01 
+
+newmtl material_2_2
+illum 3
+d 1
+Ns 50
+Kd 0.009018 0.008742 0.008583 
+Ks 0.5 0.5 0.5 
+
+newmtl material_3_2
+illum 3
+d 1
+Ns 50
+Kd 0.8 0.76343 0.742558 
+Ks 0.5 0.5 0.5 
+
+newmtl material_4_2
+illum 3
+d 1
+Ns 250
+Kd 0.8 0.8 0.8 
+Ks 0.5 0.5 0.5 
+
+newmtl material_5_2
+illum 3
+d 1
+Ns 50
+Kd 0.186407 0.186407 0.186407 
+Ks 0.351726 0.351726 0.351726 
+
+newmtl material_6_2
+illum 3
+d 1
+Ns 15
+Kd 0.00646 0.00646 0.00646 
+Ks 0.1 0.1 0.1 
+
+newmtl material_7_2
+illum 3
+d 1
+Ns 50
+Kd 0.52 0.52 0.52 
+Ks 1 1 1 
+
