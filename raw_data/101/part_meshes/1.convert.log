@@ -1,0 +1,11 @@
+assimp export: select file format: 'stl' (Stereolithography)
+Launching asset import ...           OK
+Validating postprocessing flags ...  OK
+Importing file ...                   OK 
+   import took approx. 0.03372 seconds
+
+Launching asset export ...           OK
+Exporting file ...                   OK 
+   export took approx. 0.03417 seconds
+
+assimp export: wrote output file: 1.stl

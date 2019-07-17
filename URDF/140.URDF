@@ -1,0 +1,88 @@
+<robot name="140">
+
+
+	<link name="0:virtual">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0" radius="0"/>
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="1:static">
+		<visual>
+			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/140/part_meshes/1.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="2:drawer 1">
+		<visual>
+			<origin xyz="-1.996755599975586e-06 -0.8599999845027924 -0.008573994040489197" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/140/part_meshes/2.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="3:drawer 2">
+		<visual>
+			<origin xyz="-1.996755599975586e-06 -0.549999013543129 -0.008573994040489197" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/140/part_meshes/3.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="4:drawer 3">
+		<visual>
+			<origin xyz="-1.996755599975586e-06 -0.23999899625778198 -0.008573994040489197" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/140/part_meshes/4.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<joint name="0:virtual::1:static" type="fixed">
+		<parent link="0:virtual"/>
+		<child link="1:static"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+	</joint>
+
+
+	<joint name="0:virtual::2:drawer 1_translation" type="prismatic">
+		<parent link="0:virtual"/>
+		<child link="2:drawer 1"/>
+		<origin xyz="1.996755599975586e-06 0.8599999845027924 0.008573994040489197" rpy="0 0 0"/>
+		<limit lower="-0.0004999935626984" upper="0.354500006437302" effort="10" velocity="3"/>
+		<axis xyz="0.0 0.0 1.0"/>
+	</joint>
+
+
+	<joint name="0:virtual::3:drawer 2_translation" type="prismatic">
+		<parent link="0:virtual"/>
+		<child link="3:drawer 2"/>
+		<origin xyz="1.996755599975586e-06 0.549999013543129 0.008573994040489197" rpy="0 0 0"/>
+		<limit lower="-0.0004999935626984" upper="0.354500006437302" effort="10" velocity="3"/>
+		<axis xyz="0.0 0.0 1.0"/>
+	</joint>
+
+
+	<joint name="0:virtual::4:drawer 3_translation" type="prismatic">
+		<parent link="0:virtual"/>
+		<child link="4:drawer 3"/>
+		<origin xyz="1.996755599975586e-06 0.23999899625778198 0.008573994040489197" rpy="0 0 0"/>
+		<limit lower="-0.0004999935626984" upper="0.354500006437302" effort="10" velocity="3"/>
+		<axis xyz="0.0 0.0 1.0"/>
+	</joint>
+
+
+</robot>

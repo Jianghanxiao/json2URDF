@@ -1,0 +1,50 @@
+<robot name="338">
+
+
+	<link name="0:virtual">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0" radius="0"/>
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="1:static">
+		<visual>
+			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/338/part_meshes/1.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="2:crank arm 1">
+		<visual>
+			<origin xyz="2.5832212058665704e-08 -0.28319600224494934 -0.08292959250918758" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/338/part_meshes/2.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<joint name="0:virtual::1:static" type="fixed">
+		<parent link="0:virtual"/>
+		<child link="1:static"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+	</joint>
+
+
+	<joint name="0:virtual::2:crank arm 1_rotation" type="revolute">
+		<parent link="0:virtual"/>
+		<child link="2:crank arm 1"/>
+		<origin xyz="-2.5832212058665704e-08 0.28319600224494934 0.08292959250918758" rpy="0 0 0"/>
+		<limit lower="-3.141592653589793" upper="3.141592653589793" effort="10" velocity="3"/>
+		<axis xyz="0.9601337565291849 0.0 0.27954099801845866"/>
+	</joint>
+
+
+</robot>

@@ -1,0 +1,69 @@
+<robot name="122">
+
+
+	<link name="0:virtual">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0" radius="0"/>
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="1:static">
+		<visual>
+			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/122/part_meshes/1.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="2:door 1">
+		<visual>
+			<origin xyz="0.3208682435565092 -0.4836367012858392 0.061359027146796565" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/122/part_meshes/2.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="3:handle 2">
+		<visual>
+			<origin xyz="-0.1448358135996755 -0.9393599705696106 0.48905022038518753" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/122/part_meshes/3.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<joint name="0:virtual::1:static" type="fixed">
+		<parent link="0:virtual"/>
+		<child link="1:static"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+	</joint>
+
+
+	<joint name="0:virtual::2:door 1_rotation" type="revolute">
+		<parent link="0:virtual"/>
+		<child link="2:door 1"/>
+		<origin xyz="-0.3208682435565092 0.4836367012858392 -0.061359027146796565" rpy="0 0 0"/>
+		<limit lower="-0.9424777960769379" upper="1.382300767579509" effort="10" velocity="3"/>
+		<axis xyz="0.0 1.0 0.0"/>
+	</joint>
+
+
+	<joint name="2:door 1::3:handle 2_rotation" type="revolute">
+		<parent link="2:door 1"/>
+		<child link="3:handle 2"/>
+		<origin xyz="0.46570405715618474 0.45572326928377144 -0.42769119323839094" rpy="0 0 0"/>
+		<limit lower="-0.7853981633974483" upper="0.0" effort="10" velocity="3"/>
+		<axis xyz="-0.7572616745370587 0.0 -0.6531115955771492"/>
+	</joint>
+
+
+</robot>

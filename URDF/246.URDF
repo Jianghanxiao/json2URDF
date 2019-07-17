@@ -1,0 +1,50 @@
+<robot name="246">
+
+
+	<link name="0:virtual">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0" radius="0"/>
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="1:static">
+		<visual>
+			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/246/part_meshes/1.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="2:door 1">
+		<visual>
+			<origin xyz="0.3747584473720997 -1.28699999777072 0.09248346539551416" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/246/part_meshes/2.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<joint name="0:virtual::1:static" type="fixed">
+		<parent link="0:virtual"/>
+		<child link="1:static"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+	</joint>
+
+
+	<joint name="0:virtual::2:door 1_rotation" type="revolute">
+		<parent link="0:virtual"/>
+		<child link="2:door 1"/>
+		<origin xyz="-0.3747584473720997 1.28699999777072 -0.09248346539551416" rpy="0 0 0"/>
+		<limit lower="-0.7696902001294993" upper="0.5026548245743669" effort="10" velocity="3"/>
+		<axis xyz="0.0 1.0 0.0"/>
+	</joint>
+
+
+</robot>

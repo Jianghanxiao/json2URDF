@@ -1,6 +1,8 @@
 import json
 import numpy as np
 import argparse
+import glob
+import os
 
 #this funciton is used to obtain the link part URDF code
 def add_link(label, mesh, origin, dir):
@@ -54,111 +56,118 @@ def add_joint(joint_type, parent_link, children_link, origin, axis=[], rangeMin=
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i','--id', type=str, help='the object which is used to trandform into URDF, such as 106', required=False, default='397')
+    #parser.add_argument('-i','--id', type=str, help='the object which is used to trandform into URDF, such as 106', required=False, default='397')
     parser.add_argument('-d','--data_dir', type=str, help='the dir which contains all the data, suach as ./raw_data', required=False, default='raw_data')
     args = parser.parse_args()
 
-    object_id = args.id
     dir = args.data_dir
 
-    #ajson file is used to get the relationship between the link and the meshes
-    file = open(f'{dir}/{object_id}/{object_id}.articulated-parts.json')
-    json_data = json.load(file)
-    file.close()
+    model_dirs = glob.glob(dir + '/*')
+    for model_dir in model_dirs:
 
-    #articulations information 
-    articulations = json_data['articulations']
+        #convert all meshes into dae form
+        os.system("cd "+ model_dir + "/part_meshes && ls *.obj | cut -f1 -d'.' > partids.txt && parallel --colsep=',' -j 4 --eta 'assimp export {1}.obj {1}.dae' :::: partids.txt")
+        
+        object_id = model_dir.split("/")[-1]
 
-    #parts information
-    parts = json_data['parts']
+        #ajson file is used to get the relationship between the link and the meshes
+        file = open(f'{dir}/{object_id}/{object_id}.articulated-parts.json')
+        json_data = json.load(file)
+        file.close()
 
-    #add a virtual part for the following tree 0: unknown the virtual point
-    part_num = len(parts) 
-    
-    #construct the tree based on the childId
-    parent = np.zeros(part_num, dtype=int)
-    for i in range(part_num):
-        parent[i] = -1
-    children = {}
+        #articulations information 
+        articulations = json_data['articulations']
 
-    #get the information of the articualtions
-    joint_type = np.zeros(part_num, dtype=int) #0:fixed, 1:"Central Rotation and Hinge Rotation", 2:"Translation"
-    origin = np.zeros((part_num, 3))
-    axis = np.zeros((part_num, 3))
-    rangeMin = np.zeros(part_num)
-    rangeMax = np.zeros(part_num)
-    name = {}
+        #parts information
+        parts = json_data['parts']
 
-    for i in parts:
-        if i != None:
-            part_id = i['pid']
+        #add a virtual part for the following tree 0: unknown the virtual point
+        part_num = len(parts) 
+        
+        #construct the tree based on the childId
+        parent = np.zeros(part_num, dtype=int)
+        for i in range(part_num):
+            parent[i] = -1
+        children = {}
 
-            #get the children and parent information
-            if 'childIds' in i.keys():
-                children[part_id] = i['childIds']
-                for j in children[part_id]:
-                    parent[j] = part_id
+        #get the information of the articualtions
+        joint_type = np.zeros(part_num, dtype=int) #0:fixed, 1:"Central Rotation and Hinge Rotation", 2:"Translation"
+        origin = np.zeros((part_num, 3))
+        axis = np.zeros((part_num, 3))
+        rangeMin = np.zeros(part_num)
+        rangeMax = np.zeros(part_num)
+        name = {}
 
-            #get the name information
-            name[part_id] = i['name']
+        for i in parts:
+            if i != None:
+                part_id = i['pid']
 
-            #get the articulation information
-            if 'articulationIds' in i.keys():
-                arti_id = i['articulationIds'][0]
-                origin[part_id] = articulations[arti_id]['origin']
-                axis[part_id] = articulations[arti_id]['axis']
-                rangeMin[part_id] = articulations[arti_id]['rangeMin']
-                rangeMax[part_id] = articulations[arti_id]['rangeMax']
-                if articulations[arti_id]['type'] == 'Translation':
-                    joint_type[part_id] = 2
-                else:
-                    joint_type[part_id] = 1
+                #get the children and parent information
+                if 'childIds' in i.keys():
+                    children[part_id] = i['childIds']
+                    for j in children[part_id]:
+                        parent[j] = part_id
 
-    children[0] = []
-    for i in range(1, part_num):
-        if parent[i] == -1:
-            parent[i] = 0
-            children[0].append(i)
-    name[0] = 'virtual'
-    origin[0] = [0, 0, 0]
-    
-    #used to write the URDF
-    URDF = []
-    URDF.append(f'<robot name="{object_id}">')
-    URDF.append('\n')
+                #get the name information
+                name[part_id] = i['name']
 
-    #used to add all the links
-    for i in range(part_num):
-        if i != 0:
-            temp_URDF = add_link(name[i], i, origin[i], dir)
-            URDF.extend(temp_URDF)  
-        else:
-            URDF.append(f'\t<link name="{i}:{name[i]}">')
-            URDF.append(f'\t\t<visual>')
-            URDF.append(f'\t\t\t<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>')
-            URDF.append(f'\t\t\t<geometry>')
-            URDF.append(f'\t\t\t\t<cylinder length="0" radius="0"/>')
-            URDF.append(f'\t\t\t</geometry>')
-            URDF.append(f'\t\t</visual>')
-            URDF.append(f'\t</link>')
-            URDF.append(f'\n')
+                #get the articulation information
+                if 'articulationIds' in i.keys():
+                    arti_id = i['articulationIds'][0]
+                    origin[part_id] = articulations[arti_id]['origin']
+                    axis[part_id] = articulations[arti_id]['axis']
+                    rangeMin[part_id] = articulations[arti_id]['rangeMin']
+                    rangeMax[part_id] = articulations[arti_id]['rangeMax']
+                    if articulations[arti_id]['type'] == 'Translation':
+                        joint_type[part_id] = 2
+                    else:
+                        joint_type[part_id] = 1
 
-    for i in parts:
-        if i != None:
-            part_id = i['pid']
-            par = parent[part_id]
-            if 'articulationIds' in i.keys():
-                temp_URDF = add_joint(joint_type[part_id], str(par)+':'+name[par], str(part_id)+':'+name[part_id], origin[part_id]-origin[par], axis[part_id], rangeMin[part_id], rangeMax[part_id])
-                URDF.extend(temp_URDF)
+        children[0] = []
+        for i in range(1, part_num):
+            if parent[i] == -1:
+                parent[i] = 0
+                children[0].append(i)
+        name[0] = 'virtual'
+        origin[0] = [0, 0, 0]
+        
+        #used to write the URDF
+        URDF = []
+        URDF.append(f'<robot name="{object_id}">')
+        URDF.append('\n')
+
+        #used to add all the links
+        for i in range(part_num):
+            if i != 0:
+                temp_URDF = add_link(name[i], i, origin[i], dir)
+                URDF.extend(temp_URDF)  
             else:
-                temp_URDF = add_joint(joint_type[part_id], str(par)+':'+name[par], str(part_id)+':'+name[part_id], origin[part_id]-origin[par])
-                URDF.extend(temp_URDF)
+                URDF.append(f'\t<link name="{i}:{name[i]}">')
+                URDF.append(f'\t\t<visual>')
+                URDF.append(f'\t\t\t<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>')
+                URDF.append(f'\t\t\t<geometry>')
+                URDF.append(f'\t\t\t\t<cylinder length="0" radius="0"/>')
+                URDF.append(f'\t\t\t</geometry>')
+                URDF.append(f'\t\t</visual>')
+                URDF.append(f'\t</link>')
+                URDF.append(f'\n')
 
-    URDF.append(f'</robot>')
+        for i in parts:
+            if i != None:
+                part_id = i['pid']
+                par = parent[part_id]
+                if 'articulationIds' in i.keys():
+                    temp_URDF = add_joint(joint_type[part_id], str(par)+':'+name[par], str(part_id)+':'+name[part_id], origin[part_id]-origin[par], axis[part_id], rangeMin[part_id], rangeMax[part_id])
+                    URDF.extend(temp_URDF)
+                else:
+                    temp_URDF = add_joint(joint_type[part_id], str(par)+':'+name[par], str(part_id)+':'+name[part_id], origin[part_id]-origin[par])
+                    URDF.extend(temp_URDF)
 
-    file = open(f'{object_id}.URDF', 'w')
-    file.write('\n'.join(URDF))
-    file.close()
+        URDF.append(f'</robot>')
+
+        file = open(f'URDF/{object_id}.URDF', 'w')
+        file.write('\n'.join(URDF))
+        file.close()
 
 
 

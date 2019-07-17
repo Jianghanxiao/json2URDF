@@ -1,0 +1,88 @@
+<robot name="187">
+
+
+	<link name="0:virtual">
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0" radius="0"/>
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="1:static">
+		<visual>
+			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/187/part_meshes/1.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="2:door 1">
+		<visual>
+			<origin xyz="-0.21788372811951034 -1.0800000568851829 0.02757142707403364" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/187/part_meshes/2.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="3:door 2">
+		<visual>
+			<origin xyz="0.6443700194358826 -1.080000028014183 0.031111051328480244" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/187/part_meshes/3.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<link name="4:door 3">
+		<visual>
+			<origin xyz="-0.1938921637893131 -1.080000028014183 0.03200986613455429" rpy="0 0 0"/>
+			<geometry>
+				<mesh filename="raw_data/187/part_meshes/4.dae" />
+			</geometry>
+		</visual>
+	</link>
+
+
+	<joint name="0:virtual::1:static" type="fixed">
+		<parent link="0:virtual"/>
+		<child link="1:static"/>
+		<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+	</joint>
+
+
+	<joint name="0:virtual::2:door 1_rotation" type="revolute">
+		<parent link="0:virtual"/>
+		<child link="2:door 1"/>
+		<origin xyz="0.21788372811951034 1.0800000568851829 -0.02757142707403364" rpy="0 0 0"/>
+		<limit lower="-1.319468914507713" upper="0.0" effort="10" velocity="3"/>
+		<axis xyz="0.0 1.0 0.0"/>
+	</joint>
+
+
+	<joint name="0:virtual::3:door 2_rotation" type="revolute">
+		<parent link="0:virtual"/>
+		<child link="3:door 2"/>
+		<origin xyz="-0.6443700194358826 1.080000028014183 -0.031111051328480244" rpy="0 0 0"/>
+		<limit lower="-1.6964600329384885" upper="0.0" effort="10" velocity="3"/>
+		<axis xyz="0.0 1.0 0.0"/>
+	</joint>
+
+
+	<joint name="0:virtual::4:door 3_rotation" type="revolute">
+		<parent link="0:virtual"/>
+		<child link="4:door 3"/>
+		<origin xyz="0.1938921637893131 1.080000028014183 -0.03200986613455429" rpy="0 0 0"/>
+		<limit lower="0.0" upper="1.429424657383356" effort="10" velocity="3"/>
+		<axis xyz="0.0 1.0 0.0"/>
+	</joint>
+
+
+</robot>
