@@ -11,7 +11,7 @@ def add_link(label, mesh, origin, dir):
     temp_URDF.append('\t\t<visual>')
     temp_URDF.append(f'\t\t\t<origin xyz="{-origin[0]} {-origin[1]} {-origin[2]}" rpy="0 0 0"/>')
     temp_URDF.append('\t\t\t<geometry>')
-    temp_URDF.append(f'\t\t\t\t<mesh filename="{dir}/{object_id}/part_meshes/{mesh}.dae" />')
+    temp_URDF.append(f'\t\t\t\t<mesh filename="../{dir}/{object_id}/part_meshes/{mesh}.dae" />')
     temp_URDF.append('\t\t\t</geometry>')
     temp_URDF.append('\t\t</visual>')  
     temp_URDF.append('\t</link>')    

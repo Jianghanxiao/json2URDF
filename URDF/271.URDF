@@ -15,7 +15,7 @@
 		<visual>
 			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
 			<geometry>
-				<mesh filename="raw_data/271/part_meshes/1.dae" />
+				<mesh filename="../raw_data/271/part_meshes/1.dae" />
 			</geometry>
 		</visual>
 	</link>
@@ -25,7 +25,7 @@
 		<visual>
 			<origin xyz="-0.00030300021171569824 -1.0758389830589294 0.0049974992871284485" rpy="0 0 0"/>
 			<geometry>
-				<mesh filename="raw_data/271/part_meshes/2.dae" />
+				<mesh filename="../raw_data/271/part_meshes/2.dae" />
 			</geometry>
 		</visual>
 	</link>
@@ -35,7 +35,7 @@
 		<visual>
 			<origin xyz="-0.00030300021171569824 -0.8525895178318024 0.0049974992871284485" rpy="0 0 0"/>
 			<geometry>
-				<mesh filename="raw_data/271/part_meshes/3.dae" />
+				<mesh filename="../raw_data/271/part_meshes/3.dae" />
 			</geometry>
 		</visual>
 	</link>
@@ -45,7 +45,7 @@
 		<visual>
 			<origin xyz="-9.000301361083984e-06 -0.6308709979057312 0.0049974992871284485" rpy="0 0 0"/>
 			<geometry>
-				<mesh filename="raw_data/271/part_meshes/4.dae" />
+				<mesh filename="../raw_data/271/part_meshes/4.dae" />
 			</geometry>
 		</visual>
 	</link>
@@ -55,7 +55,7 @@
 		<visual>
 			<origin xyz="-0.6299980282783508 -1.1851799488067627 -0.23997201025485992" rpy="0 0 0"/>
 			<geometry>
-				<mesh filename="raw_data/271/part_meshes/5.dae" />
+				<mesh filename="../raw_data/271/part_meshes/5.dae" />
 			</geometry>
 		</visual>
 	</link>
@@ -65,7 +65,7 @@
 		<visual>
 			<origin xyz="0.6492749691605572 -1.7799999713897705 -0.23900000953674277" rpy="0 0 0"/>
 			<geometry>
-				<mesh filename="raw_data/271/part_meshes/6.dae" />
+				<mesh filename="../raw_data/271/part_meshes/6.dae" />
 			</geometry>
 		</visual>
 	</link>
