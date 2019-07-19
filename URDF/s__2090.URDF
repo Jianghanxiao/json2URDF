@@ -12,6 +12,11 @@
 
 
 	<link name="1:static">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
 			<geometry>
@@ -22,6 +27,11 @@
 
 
 	<link name="2:drawer 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.20000001043081284 -0.5297195017337799 0.0022474974393844604" rpy="0 0 0"/>
 			<geometry>
@@ -32,6 +42,11 @@
 
 
 	<link name="3:drawer 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.20000001043081284 -0.7084999978542328 0.0022475048899650574" rpy="0 0 0"/>
 			<geometry>
@@ -42,6 +57,11 @@
 
 
 	<link name="4:drawer 3">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.20000001043081284 -0.35071949660778046 0.0022474974393844604" rpy="0 0 0"/>
 			<geometry>
@@ -52,6 +72,11 @@
 
 
 	<link name="5:drawer 4">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.20000001043081284 -0.17171970382332802 0.0022474974393844604" rpy="0 0 0"/>
 			<geometry>
@@ -62,6 +87,11 @@
 
 
 	<link name="6:cabinet door 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.5775610208511353 -0.43978049606084824 -0.1782499998807907" rpy="0 0 0"/>
 			<geometry>

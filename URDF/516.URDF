@@ -12,6 +12,11 @@
 
 
 	<link name="1:static">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
 			<geometry>
@@ -22,6 +27,11 @@
 
 
 	<link name="2:armrest 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.2751470059156418 -0.6934645175933838 0.007461998611688614" rpy="0 0 0"/>
 			<geometry>
@@ -32,6 +42,11 @@
 
 
 	<link name="3:armrest 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.2751470059156418 -0.6934645175933838 0.007461998611688614" rpy="0 0 0"/>
 			<geometry>
@@ -42,6 +57,11 @@
 
 
 	<link name="4:backrest 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.23217172102628017 -0.4293150041103362 0.18078520651190394" rpy="0 0 0"/>
 			<geometry>
@@ -52,6 +72,11 @@
 
 
 	<link name="5:wheel 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="2.8500333428382874e-05 -0.025014499100507237 -0.31538400053977966" rpy="0 0 0"/>
 			<geometry>
@@ -62,6 +87,11 @@
 
 
 	<link name="6:wheel 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.32976644030748237 -0.025014499100507237 -0.07881467496090609" rpy="0 0 0"/>
 			<geometry>
@@ -72,6 +102,11 @@
 
 
 	<link name="7:wheel 3">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.32978458130077376 -0.025014499100507237 -0.07876124182861405" rpy="0 0 0"/>
 			<geometry>
@@ -82,6 +117,11 @@
 
 
 	<link name="8:wheel 4">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.203835192202454 -0.025014499100507237 0.30887009292989054" rpy="0 0 0"/>
 			<geometry>
@@ -92,6 +132,11 @@
 
 
 	<link name="9:wheel 5">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.20378965217786538 -0.025014499100507237 0.3089031815654103" rpy="0 0 0"/>
 			<geometry>
@@ -102,6 +147,11 @@
 
 
 	<link name="10:seat 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.0 -0.4195210039615631 -0.08163700252771378" rpy="0 0 0"/>
 			<geometry>
@@ -112,6 +162,11 @@
 
 
 	<link name="11:arm 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.2601584851737282 -0.6207724809646606 0.11514195753724817" rpy="0 0 0"/>
 			<geometry>
@@ -122,6 +177,11 @@
 
 
 	<link name="12:caster 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="2.800021320581436e-05 -0.03805199917405844 -0.3013509912490845" rpy="0 0 0"/>
 			<geometry>
@@ -132,6 +192,11 @@
 
 
 	<link name="13:caster 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.30868655915566734 -0.03805199917405844 -0.07196498073319178" rpy="0 0 0"/>
 			<geometry>
@@ -142,6 +207,11 @@
 
 
 	<link name="14:caster 3">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.19712791284663858 -0.03805199917405844 0.2996388844519469" rpy="0 0 0"/>
 			<geometry>
@@ -152,6 +222,11 @@
 
 
 	<link name="15:caster 4">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.1931123082611337 -0.03805199917405844 0.29420678789379795" rpy="0 0 0"/>
 			<geometry>
@@ -162,6 +237,11 @@
 
 
 	<link name="16:caster 5">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.30680168114605333 -0.03805199917405844 -0.07129380838184372" rpy="0 0 0"/>
 			<geometry>
@@ -172,6 +252,11 @@
 
 
 	<link name="17:arm 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.26015813139043586 -0.6207724809646606 0.11514281002613701" rpy="0 0 0"/>
 			<geometry>
@@ -182,6 +267,11 @@
 
 
 	<link name="18:gas lift piece 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.0 -0.1816760003566742 0.02836250001564622" rpy="0 0 0"/>
 			<geometry>

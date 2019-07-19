@@ -12,6 +12,11 @@
 
 
 	<link name="1:static">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
 			<geometry>
@@ -22,6 +27,11 @@
 
 
 	<link name="2:dial 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.11667504534125328 -0.6887584924697876 -0.2776990085840225" rpy="0 0 0"/>
 			<geometry>
@@ -32,6 +42,11 @@
 
 
 	<link name="3:dial 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.11667510122060776 -0.6887584924697876 -0.2776990085840225" rpy="0 0 0"/>
 			<geometry>
@@ -42,6 +57,11 @@
 
 
 	<link name="4:oven door 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.0 -0.16499998750669992 -0.23601500689983368" rpy="0 0 0"/>
 			<geometry>

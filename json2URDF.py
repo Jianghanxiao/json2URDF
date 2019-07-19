@@ -8,6 +8,13 @@ import os
 def add_link(label, mesh, origin, dir):
     temp_URDF = []
     temp_URDF.append(f'\t<link name="{mesh}:{label}">')
+
+    temp_URDF.append('\t\t<inertial>')
+    temp_URDF.append('\t\t\t<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>')
+    temp_URDF.append('\t\t\t<mass value="1.0"/>')
+    temp_URDF.append('\t\t\t<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>')
+    temp_URDF.append('\t\t</inertial>')  
+
     temp_URDF.append('\t\t<visual>')
     temp_URDF.append(f'\t\t\t<origin xyz="{-origin[0]} {-origin[1]} {-origin[2]}" rpy="0 0 0"/>')
     temp_URDF.append('\t\t\t<geometry>')

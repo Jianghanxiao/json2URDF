@@ -12,6 +12,11 @@
 
 
 	<link name="1:static">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
 			<geometry>
@@ -22,6 +27,11 @@
 
 
 	<link name="2:seat 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.0006612018783845874 -0.48143652081489563 0.012038486080212785" rpy="0 0 0"/>
 			<geometry>
@@ -32,6 +42,11 @@
 
 
 	<link name="3:back 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.0 -0.7962155342102051 0.232573501765728" rpy="0 0 0"/>
 			<geometry>
@@ -42,6 +57,11 @@
 
 
 	<link name="4:wheel 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.2790089157069972 -0.025259584668674506 -0.0658795236838393" rpy="0 0 0"/>
 			<geometry>
@@ -52,6 +72,11 @@
 
 
 	<link name="5:wheel 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.008753250353038311 -0.025259589165216312 -0.2834869921207428" rpy="0 0 0"/>
 			<geometry>
@@ -62,6 +87,11 @@
 
 
 	<link name="6:wheel 3">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.2735989465889165 -0.025259585163439624 -0.08320913510829739" rpy="0 0 0"/>
 			<geometry>
@@ -72,6 +102,11 @@
 
 
 	<link name="7:wheel 4">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.17784655607603142 -0.02525957715988625 0.25817708051272775" rpy="0 0 0"/>
 			<geometry>
@@ -82,6 +117,11 @@
 
 
 	<link name="8:wheel 5">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.16368376790822767 -0.02525957715988625 0.26888736477292197" rpy="0 0 0"/>
 			<geometry>
@@ -92,6 +132,11 @@
 
 
 	<link name="9:gas lift piece 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="1.5506874742610144e-09 -0.1991405040025711 0.018897852546253202" rpy="0 0 0"/>
 			<geometry>
@@ -102,6 +147,11 @@
 
 
 	<link name="10:caster 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.017370465453642785 -0.04694264940917492 -0.2832771436720425" rpy="0 0 0"/>
 			<geometry>
@@ -112,6 +162,11 @@
 
 
 	<link name="11:caster 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.27404881776393314 -0.0474907001554966 -0.08430500426129597" rpy="0 0 0"/>
 			<geometry>
@@ -122,6 +177,11 @@
 
 
 	<link name="12:caster 3">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.18542075624881676 -0.04694264940917492 0.25237669248498834" rpy="0 0 0"/>
 			<geometry>
@@ -132,6 +192,11 @@
 
 
 	<link name="13:caster 4">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.15578748791753266 -0.04694264940917492 0.2741130091421757" rpy="0 0 0"/>
 			<geometry>
@@ -142,6 +207,11 @@
 
 
 	<link name="14:caster 5">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.2812476877765576 -0.04694264940917492 -0.058887474768614584" rpy="0 0 0"/>
 			<geometry>

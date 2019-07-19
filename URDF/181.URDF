@@ -12,6 +12,11 @@
 
 
 	<link name="1:static">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.0 -0.0 -0.0" rpy="0 0 0"/>
 			<geometry>
@@ -22,6 +27,11 @@
 
 
 	<link name="2:cabinet door 1">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="-0.4590969979763031 -0.5384780019521713 -0.18807999789714813" rpy="0 0 0"/>
 			<geometry>
@@ -32,6 +42,11 @@
 
 
 	<link name="3:cabinet door 2">
+		<inertial>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			<mass value="1.0"/>
+			<inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+		</inertial>
 		<visual>
 			<origin xyz="0.4596639871597292 -0.5384780019521713 -0.17709099501371384" rpy="0 0 0"/>
 			<geometry>
