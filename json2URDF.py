@@ -77,7 +77,7 @@ if __name__ == '__main__':
         
         object_id = model_dir.split("/")[-1]
 
-        #ajson file is used to get the relationship between the link and the meshes
+        #json file is used to get the relationship between the link and the meshes
         file = open(f'{dir}/{object_id}/{object_id}.articulated-parts.json')
         json_data = json.load(file)
         file.close()
