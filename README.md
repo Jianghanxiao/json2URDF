@@ -13,7 +13,3 @@ This one works in mac, please just google urdf-viz to get for other systems
 
 Command:
 `urdf-viz 106.URDF`
-### Discussion doc
-If you detect any bug, please record it in the google
-
-https://docs.google.com/document/d/1-0UC4HDmy9iJFYgZadZQhVAfyOtBOCsA-ZfvuNaXoXc/edit?usp=sharing
